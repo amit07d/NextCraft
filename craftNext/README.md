@@ -1,7 +1,12 @@
-# A music school project in NextJS
+Dynamic Courses Page: Displays a list of music courses dynamically.
+Interactive 3D Cards: Built with responsive UI and animations for a modern user experience.
+Contact Us Form: Users can send inquiries with email and message inputs.
+Custom TailwindCSS Plugins: Includes SVG patterns and animations using custom plugins.
 
-## Description
-Seach "chai aur code" on youtube and watch it there
-
-## contributon
-No need to make any PR in this repo. Specially DO NOT touch the README.md file
+🛠️ Tech Stack
+Framework: Next.js
+CSS Framework: TailwindCSS
+Programming Language: TypeScript
+Libraries:
+mini-svg-data-uri (for custom SVG patterns)
+Tailwind custom utilities and plugins
