@@ -8,47 +8,49 @@ const UserNameValidationSchema = z.object({
 });
 
 export async function GET(request: Request) {
-      // console.log(`Received request with method: ${request.method}`);
     try {
         await dbConnect();
+
         const { searchParams } = new URL(request.url);
-        const queryParams = {
-            username: searchParams.get('username')
-        };
+        const username = searchParams.get('username');
 
-        const result = UserNameValidationSchema.safeParse(queryParams);
-        console.log(result); // TODO:
-        if (!result.success) {
-            const usernameErrors = result.error.format().username?._errors || [];
-            return Response.json({
-                success: false,
-                message: usernameErrors.length > 0 ? usernameErrors.join(', ') : 'Invalid query parameters',
-            }, { status: 400 });
+        if (!username) {
+            return new Response(
+                JSON.stringify({ success: false, message: 'Username query parameter is required.' }),
+                { status: 400, headers: { 'Content-Type': 'application/json' } }
+            );
         }
 
-        const { username } = result.data;
-        const existingVerifiedUser = await UserModel.findOne({ username, isVerified: true });
-
-        if (existingVerifiedUser) {
-            return Response.json({
-                success: false,
-                message: 'Username is unavailable, try with another username',
-            }, { status: 400 });
+        const validationResult = UserNameValidationSchema.safeParse({ username });
+        if (!validationResult.success) {
+            const errors = validationResult.error.format().username?._errors || [];
+            return new Response(
+                JSON.stringify({
+                    success: false,
+                    message: errors.length > 0 ? errors.join(', ') : 'Invalid query parameters',
+                }),
+                { status: 400, headers: { 'Content-Type': 'application/json' } }
+            );
         }
 
-        return Response.json({
-            success: true,
-            message: 'Username is available',
-        }, { status: 200 });
+        const existingUser = await UserModel.findOne({ username, isVerified: true });
+        if (existingUser) {
+            return new Response(
+                JSON.stringify({ success: false, message: 'Username is unavailable, try with another username.' }),
+                { status: 400, headers: { 'Content-Type': 'application/json' } }
+            );
+        }
+
+        return new Response(
+            JSON.stringify({ success: true, message: 'Username is available.' }),
+            { status: 200, headers: { 'Content-Type': 'application/json' } }
+        );
 
     } catch (error) {
         console.error('Error checking username:', error);
-        return Response.json({
-            success: false,
-            message: 'Error checking username',
-        }, { status: 500 });
+        return new Response(
+            JSON.stringify({ success: false, message: 'Internal Server Error' }),
+            { status: 500, headers: { 'Content-Type': 'application/json' } }
+        );
     }
 }
-
-
-
