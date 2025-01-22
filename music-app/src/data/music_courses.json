@@ -1,0 +1,104 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "title": "Football Fundamentals",
+            "slug": "football-fundamentals",
+            "description": "Learn the basics of football, including rules, techniques, and strategies for beginners.",
+            "price": 99.99,
+            "instructor": "John Doe",
+            "isFeatured": true,
+            "image": "/courses/football.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Cricket for Beginners",
+            "slug": "cricket-for-beginners",
+            "description": "Start your cricket journey with foundational skills taught by expert coaches.",
+            "price": 109.99,
+            "instructor": "Jane Smith",
+            "isFeatured": false,
+            "image": "/courses/cricket.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Advanced Football Techniques",
+            "slug": "advanced-football-techniques",
+            "description": "Enhance your football game with advanced techniques for intermediate to advanced players.",
+            "price": 119.99,
+            "instructor": "Emily Johnson",
+            "isFeatured": true,
+            "image": "/courses/advanced-football.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Cricket Mastery",
+            "slug": "cricket-mastery",
+            "description": "Master the game of cricket with comprehensive training for all skill levels.",
+            "price": 129.99,
+            "instructor": "Mike Brown",
+            "isFeatured": false,
+            "image": "/courses/cricket-mastery.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Football Strategy and Tactics",
+            "slug": "football-strategy-tactics",
+            "description": "Learn the art of football strategy, formations, and in-game tactics.",
+            "price": 139.99,
+            "instructor": "Chris Davis",
+            "isFeatured": false,
+            "image": "/courses/football-strategy.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Cricket Bowling Techniques",
+            "slug": "cricket-bowling-techniques",
+            "description": "Dive into the essentials of cricket bowling, from spin to fast bowling.",
+            "price": 149.99,
+            "instructor": "Alex Wilson",
+            "isFeatured": true,
+            "image": "/courses/cricket-bowling.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Football Fitness Essentials",
+            "slug": "football-fitness-essentials",
+            "description": "Build the fitness and agility needed to excel in football.",
+            "price": 159.99,
+            "instructor": "Samantha Miller",
+            "isFeatured": false,
+            "image": "/courses/football-fitness.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Cricket Batting Techniques",
+            "slug": "cricket-batting-techniques",
+            "description": "Improve your batting skills with expert guidance for players of all levels.",
+            "price": 169.99,
+            "instructor": "Luke Harris",
+            "isFeatured": true,
+            "image": "/courses/cricket-batting.jpg"
+        },
+        {
+            "id": 9,
+            "title": "History of Football",
+            "slug": "history-of-football",
+            "description": "Explore the rich history of football, from its origins to modern-day leagues.",
+            "price": 179.99,
+            "instructor": "Grace Lee",
+            "isFeatured": false,
+            "image": "/courses/football-history.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Cricket Fielding Essentials",
+            "slug": "cricket-fielding-essentials",
+            "description": "Discover techniques to improve fielding, catching, and throwing in cricket.",
+            "price": 189.99,
+            "instructor": "Ethan Moore",
+            "isFeatured": true,
+            "image": "/courses/cricket-fielding.jpg"
+        }
+    ]
+}
